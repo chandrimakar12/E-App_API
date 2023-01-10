@@ -100,6 +100,27 @@ namespace HCOUserInfo.Controllers
 
         }
 
+
+        [HttpGet]
+        [Route("GetRecordsbyStatus")]
+        public async Task<IActionResult> GetRecordsbyStatus([FromQuery] string status)
+        {
+            GetRecordsbyStatusResponse response = new GetRecordsbyStatusResponse();
+            try
+            {
+                response = await _hCOInfoRepo.GetRecordsbyStatus(status);
+
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = "Exception Occured : " + ex.Message;
+            }
+
+            return Ok(response);
+
+        }
+
         //HCO User Updates Info 
         [HttpPut]
         [Route("UpdateInformation")]

@@ -12,6 +12,8 @@ namespace HCOUserInfo.Repository
 
         public Task<GetRecordsbyNameResponse> GetRecordsbyName(string userName);
 
+        public Task<GetRecordsbyStatusResponse> GetRecordsbyStatus(string status);
+
         public Task<UpdateInfoResponse> UpdateInfo(InsertInformation request);
     }
 }

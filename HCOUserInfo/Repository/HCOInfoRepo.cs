@@ -125,6 +125,30 @@ namespace HCOUserInfo.Repository
         }
 
 
+        public async Task<GetRecordsbyStatusResponse> GetRecordsbyStatus(string status)
+        {
+            GetRecordsbyStatusResponse response = new GetRecordsbyStatusResponse();
+            response.IsSuccess = true;
+            response.Message = "Record Fetched Successfully";
+            try
+            {
+                response.data = new List<InsertInformation>();
+                response.data = await _mongoCollection.Find(x => x.Status == status).ToListAsync();
+                if (response.data == null)
+                {
+                    response.Message = "Invalid Id.\nPlease Enter Valid Id";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
 
         public async Task<UpdateInfoResponse> UpdateInfo(InsertInformation request)
         {
