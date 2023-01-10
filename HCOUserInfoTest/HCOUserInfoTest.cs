@@ -32,7 +32,7 @@ namespace HCOUserInfoTest
         public void GetAll_ExpectedBehaviour()
         {
             var hCOUserInfoController = Create();
-            InsertInformation info = new InsertInformation(){ id=1, organizationName ="Organization", address ="Tollyguange", country="India", state="West Bengal", city="Kolkata", zipCode=700082, email="www.org.com", webSite="https://www.org.com", primaryContact="PC", primaryContactPhone=9331092359, secondaryContact="SC", secondaryContactPhone=9331092359, Status="submitted", submittedBy="hcouser_1" };
+            InsertInformation info = new InsertInformation(){ id=1, organizationName ="Organization", address ="Tollyguange", country="India", state="West Bengal", city="Kolkata", zipCode=700082, email="www.org.com", webSite="https://www.org.com", primaryContact="PC", primaryContactPhone=9331092359, secondaryContact="SC", secondaryContactPhone=9331092359,programs="programs", Status="submitted", submittedBy="hcouser_1" };
             mockHCOInfoRepo.Setup(i => i.GetAllRecord());
             var result = hCOUserInfoController.GetAllRecord();
             var final = result;
@@ -74,7 +74,7 @@ namespace HCOUserInfoTest
         public void InsertInfo_Test_ExpectedBehaviour()
         {
             var hCOUserInfoController = Create();
-            InsertInformation info = new InsertInformation() { id = 1, organizationName = "Organization", address = "Tollyguange", country = "India", state = "West Bengal", city = "Kolkata", zipCode = 700082, email = "www.org.com", webSite = "https://www.org.com", primaryContact = "PC", primaryContactPhone = 9331092359, secondaryContact = "SC", secondaryContactPhone = 9331092359, Status = "submitted", submittedBy = "hcouser_1" };
+            InsertInformation info = new InsertInformation() { id = 1, organizationName = "Organization", address = "Tollyguange", country = "India", state = "West Bengal", city = "Kolkata", zipCode = 700082, email = "www.org.com", webSite = "https://www.org.com", primaryContact = "PC", primaryContactPhone = 9331092359, secondaryContact = "SC", secondaryContactPhone = 9331092359, programs = "programs", Status = "submitted", submittedBy = "hcouser_1" };
             mockHCOInfoRepo.Setup(i => i.InsertInfo(info));
 
             var result = hCOUserInfoController.InsertInfo(info);
@@ -89,7 +89,7 @@ namespace HCOUserInfoTest
         public void UpdateInfo_Test_ExpectedBehaviour()
         {
             var hCOUserInfoController = Create();
-            InsertInformation info = new InsertInformation() { id = 1, organizationName = "Organization", address = "Tollyguange", country = "India", state = "West Bengal", city = "Kolkata", zipCode = 700082, email = "www.org.com", webSite = "https://www.org.com", primaryContact = "PC", primaryContactPhone = 9331092359, secondaryContact = "SC", secondaryContactPhone = 9331092359, Status = "submitted", submittedBy = "hcouser_1" };
+            InsertInformation info = new InsertInformation() { id = 1, organizationName = "Organization", address = "Tollyguange", country = "India", state = "West Bengal", city = "Kolkata", zipCode = 700082, email = "www.org.com", webSite = "https://www.org.com", primaryContact = "PC", primaryContactPhone = 9331092359, secondaryContact = "SC", secondaryContactPhone = 9331092359, programs = "programs", Status = "submitted", submittedBy = "hcouser_1" };
             mockHCOInfoRepo.Setup(i=> i.UpdateInfo(info));
 
             var result = hCOUserInfoController.UpdateInfo(info);

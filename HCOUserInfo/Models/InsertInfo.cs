@@ -44,7 +44,8 @@ namespace HCOUserInfo.Models
         [RegularExpression(@"^(\d{10})$", ErrorMessage = "Phone number must be of 10 digits")]
         public long secondaryContactPhone { get; set; }
 
-        //public string Programs { get; set; }
+        [Required(ErrorMessage ="Programs to be Accredited is required")]
+        public string programs { get; set; }
        // public string UpdateDate { get; set; }
         public string Status { get; set; }
         public string submittedBy { get; set; }
